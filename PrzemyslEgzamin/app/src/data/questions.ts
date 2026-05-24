@@ -290,11 +290,11 @@ Odpowiedzi b i c są poprawne. Odpowiedź a ma błąd — prawidłowo ~5109, nie
     question: 'W bazie danych istnieją dwie firmy. Dane wprowadzone do tabeli Customer będą widziane:',
     answers: [
       { label: 'a', text: 'w obu firmach jeśli w tabeli odpowiednio ustawiona jest własność DataCaptionFields', correct: false },
-      { label: 'b', text: 'w obu firmach jeśli w tabeli odpowiednio ustawiona jest własność DataPerCompany', correct: false },
-      { label: 'c', text: 'zawsze w obu firmach', correct: true },
+      { label: 'b', text: 'w obu firmach jeśli w tabeli odpowiednio ustawiona jest własność DataPerCompany', correct: true },
+      { label: 'c', text: 'zawsze w obu firmach', correct: false },
       { label: 'd', text: 'zawsze tylko w firmie, w której tabela została utworzona', correct: false },
     ],
-    explanation: 'Tabela Customer ma domyślnie DataPerCompany = Yes, co oznacza, że dane są ODDZIELNE dla każdej firmy, nie współdzielone. Jednak modyfikacje obiektów (struktury tabeli, kodu) są widoczne we wszystkich firmach. Odpowiedź c jest poprawna w kontekście: dane Customer NIE są dzielone — ale zmiany obiektów (tabela, raport) TAK.',
+    explanation: 'Poprawna jest odpowiedź b, bo za widoczność danych między firmami odpowiada własność DataPerCompany. Gdy DataPerCompany = Yes (domyślnie dla Customer), dane są odseparowane dla każdej firmy. Tylko przy DataPerCompany = No dane byłyby wspólne. DataCaptionFields nie ma wpływu na współdzielenie danych, a obiekty (np. definicja tabeli) są wspólne dla całej bazy.',
   },
   {
     id: 23,
